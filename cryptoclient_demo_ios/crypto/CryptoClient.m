@@ -49,11 +49,10 @@ static CryptoClient* manager = nil;
     }
     NSString *addressString = @"i";
     unsigned char *newPublicKey = (unsigned char *)malloc(sizeof(unsigned char)*BitsUnit);
-    NSString *no0xPrivateString = [privateKey substringFromIndex:2];
     NSMutableData* dataPrivate = [NSMutableData data];
-    for (int idx = 0; idx +2 <= no0xPrivateString.length; idx += 2) {
+    for (int idx = 0; idx +2 <= privateKey.length; idx += 2) {
         NSRange range = NSMakeRange(idx, 2);
-        NSString* hexStr = [no0xPrivateString substringWithRange:range];
+        NSString* hexStr = [privateKey substringWithRange:range];
         NSScanner* scanner = [NSScanner scannerWithString:hexStr];
         unsigned int intValue;
         [scanner scanHexInt:&intValue];
