@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F7532A17C531A1FB75FEE87 /* libPods-cryptoclient_demo_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EAE1B256E8F01CA0012F46ED /* libPods-cryptoclient_demo_ios.a */; };
 		E257362B20BE509900A5BB53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E257362A20BE509900A5BB53 /* AppDelegate.m */; };
 		E257362E20BE509900A5BB53 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E257362D20BE509900A5BB53 /* ViewController.m */; };
 		E257363120BE509900A5BB53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E257362F20BE509900A5BB53 /* Main.storyboard */; };
@@ -15,6 +16,10 @@
 		E257363920BE509B00A5BB53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E257363820BE509B00A5BB53 /* main.m */; };
 		E257364320BE509B00A5BB53 /* cryptoclient_demo_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E257364220BE509B00A5BB53 /* cryptoclient_demo_iosTests.m */; };
 		E257364E20BE509B00A5BB53 /* cryptoclient_demo_iosUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E257364D20BE509B00A5BB53 /* cryptoclient_demo_iosUITests.m */; };
+		E257365D20BE57F700A5BB53 /* CryptoClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E257365C20BE57F700A5BB53 /* CryptoClient.m */; };
+		E257366620BE60C600A5BB53 /* keccak_f.c in Sources */ = {isa = PBXBuildFile; fileRef = E257366120BE60C600A5BB53 /* keccak_f.c */; };
+		E257366720BE60C600A5BB53 /* round.c in Sources */ = {isa = PBXBuildFile; fileRef = E257366320BE60C600A5BB53 /* round.c */; };
+		E257366820BE60C600A5BB53 /* sponge.c in Sources */ = {isa = PBXBuildFile; fileRef = E257366520BE60C600A5BB53 /* sponge.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F9FE1893B86A1CAA87BB5FB /* Pods-cryptoclient_demo_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cryptoclient_demo_ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-cryptoclient_demo_ios/Pods-cryptoclient_demo_ios.release.xcconfig"; sourceTree = "<group>"; };
+		63D5685FC8DA96B70B9AE2FD /* Pods-cryptoclient_demo_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cryptoclient_demo_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cryptoclient_demo_ios/Pods-cryptoclient_demo_ios.debug.xcconfig"; sourceTree = "<group>"; };
 		E257362620BE509900A5BB53 /* cryptoclient_demo_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cryptoclient_demo_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E257362920BE509900A5BB53 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E257362A20BE509900A5BB53 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +58,15 @@
 		E257364920BE509B00A5BB53 /* cryptoclient_demo_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cryptoclient_demo_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E257364D20BE509B00A5BB53 /* cryptoclient_demo_iosUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = cryptoclient_demo_iosUITests.m; sourceTree = "<group>"; };
 		E257364F20BE509B00A5BB53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E257365C20BE57F700A5BB53 /* CryptoClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CryptoClient.m; sourceTree = "<group>"; };
+		E257365E20BE580200A5BB53 /* CryptoClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoClient.h; sourceTree = "<group>"; };
+		E257366020BE60C600A5BB53 /* sponge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sponge.h; sourceTree = "<group>"; };
+		E257366120BE60C600A5BB53 /* keccak_f.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = keccak_f.c; sourceTree = "<group>"; };
+		E257366220BE60C600A5BB53 /* round.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = round.h; sourceTree = "<group>"; };
+		E257366320BE60C600A5BB53 /* round.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = round.c; sourceTree = "<group>"; };
+		E257366420BE60C600A5BB53 /* keccak_f.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = keccak_f.h; sourceTree = "<group>"; };
+		E257366520BE60C600A5BB53 /* sponge.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sponge.c; sourceTree = "<group>"; };
+		EAE1B256E8F01CA0012F46ED /* libPods-cryptoclient_demo_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-cryptoclient_demo_ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F7532A17C531A1FB75FEE87 /* libPods-cryptoclient_demo_ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +95,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34BAD51AC9F69661DFB5673F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAE1B256E8F01CA0012F46ED /* libPods-cryptoclient_demo_ios.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3F1E7BB2B65DF1E45612132A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63D5685FC8DA96B70B9AE2FD /* Pods-cryptoclient_demo_ios.debug.xcconfig */,
+				5F9FE1893B86A1CAA87BB5FB /* Pods-cryptoclient_demo_ios.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E257361D20BE509900A5BB53 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +119,8 @@
 				E257364120BE509B00A5BB53 /* cryptoclient_demo_iosTests */,
 				E257364C20BE509B00A5BB53 /* cryptoclient_demo_iosUITests */,
 				E257362720BE509900A5BB53 /* Products */,
+				3F1E7BB2B65DF1E45612132A /* Pods */,
+				34BAD51AC9F69661DFB5673F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +137,7 @@
 		E257362820BE509900A5BB53 /* cryptoclient_demo_ios */ = {
 			isa = PBXGroup;
 			children = (
+				E257365B20BE57CD00A5BB53 /* crypto */,
 				E257362920BE509900A5BB53 /* AppDelegate.h */,
 				E257362A20BE509900A5BB53 /* AppDelegate.m */,
 				E257362C20BE509900A5BB53 /* ViewController.h */,
@@ -132,6 +169,29 @@
 			path = cryptoclient_demo_iosUITests;
 			sourceTree = "<group>";
 		};
+		E257365B20BE57CD00A5BB53 /* crypto */ = {
+			isa = PBXGroup;
+			children = (
+				E257365F20BE60C600A5BB53 /* sha3-256 */,
+				E257365E20BE580200A5BB53 /* CryptoClient.h */,
+				E257365C20BE57F700A5BB53 /* CryptoClient.m */,
+			);
+			path = crypto;
+			sourceTree = "<group>";
+		};
+		E257365F20BE60C600A5BB53 /* sha3-256 */ = {
+			isa = PBXGroup;
+			children = (
+				E257366020BE60C600A5BB53 /* sponge.h */,
+				E257366120BE60C600A5BB53 /* keccak_f.c */,
+				E257366220BE60C600A5BB53 /* round.h */,
+				E257366320BE60C600A5BB53 /* round.c */,
+				E257366420BE60C600A5BB53 /* keccak_f.h */,
+				E257366520BE60C600A5BB53 /* sponge.c */,
+			);
+			path = "sha3-256";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +199,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E257365220BE509B00A5BB53 /* Build configuration list for PBXNativeTarget "cryptoclient_demo_ios" */;
 			buildPhases = (
+				763A5A862395213663440FA8 /* [CP] Check Pods Manifest.lock */,
 				E257362220BE509900A5BB53 /* Sources */,
 				E257362320BE509900A5BB53 /* Frameworks */,
 				E257362420BE509900A5BB53 /* Resources */,
+				1449A8A56E5D24FB391D96B6 /* [CP] Embed Pods Frameworks */,
+				E1149B966905BA9EFF72493E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,19 +262,22 @@
 				TargetAttributes = {
 					E257362520BE509900A5BB53 = {
 						CreatedOnToolsVersion = 9.3.1;
+						ProvisioningStyle = Automatic;
 					};
 					E257363D20BE509B00A5BB53 = {
 						CreatedOnToolsVersion = 9.3.1;
+						ProvisioningStyle = Automatic;
 						TestTargetID = E257362520BE509900A5BB53;
 					};
 					E257364820BE509B00A5BB53 = {
 						CreatedOnToolsVersion = 9.3.1;
+						ProvisioningStyle = Automatic;
 						TestTargetID = E257362520BE509900A5BB53;
 					};
 				};
 			};
 			buildConfigurationList = E257362120BE509900A5BB53 /* Build configuration list for PBXProject "cryptoclient_demo_ios" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -257,12 +323,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1449A8A56E5D24FB391D96B6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cryptoclient_demo_ios/Pods-cryptoclient_demo_ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		763A5A862395213663440FA8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cryptoclient_demo_ios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1149B966905BA9EFF72493E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cryptoclient_demo_ios/Pods-cryptoclient_demo_ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E257362220BE509900A5BB53 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E257366720BE60C600A5BB53 /* round.c in Sources */,
 				E257362E20BE509900A5BB53 /* ViewController.m in Sources */,
+				E257365D20BE57F700A5BB53 /* CryptoClient.m in Sources */,
+				E257366620BE60C600A5BB53 /* keccak_f.c in Sources */,
+				E257366820BE60C600A5BB53 /* sponge.c in Sources */,
 				E257363920BE509B00A5BB53 /* main.m in Sources */,
 				E257362B20BE509900A5BB53 /* AppDelegate.m in Sources */,
 			);
@@ -431,13 +552,16 @@
 		};
 		E257365320BE509B00A5BB53 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63D5685FC8DA96B70B9AE2FD /* Pods-cryptoclient_demo_ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KJ82Z5P4PP;
 				INFOPLIST_FILE = cryptoclient_demo_ios/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"$(PROJECT_DIR)/cryptoclient_demo_ios/crypto/secp256k1",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.inklabsfoundation.cryptoclient-demo-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -447,13 +571,16 @@
 		};
 		E257365420BE509B00A5BB53 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F9FE1893B86A1CAA87BB5FB /* Pods-cryptoclient_demo_ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KJ82Z5P4PP;
 				INFOPLIST_FILE = cryptoclient_demo_ios/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"$(PROJECT_DIR)/cryptoclient_demo_ios/crypto/secp256k1",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.inklabsfoundation.cryptoclient-demo-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -467,11 +594,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = cryptoclient_demo_iosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.inklabsfoundation.cryptoclient-demo-iosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -485,11 +608,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = cryptoclient_demo_iosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.inklabsfoundation.cryptoclient-demo-iosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -502,11 +621,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = cryptoclient_demo_iosUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.inklabsfoundation.cryptoclient-demo-iosUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -519,11 +634,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = cryptoclient_demo_iosUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.inklabsfoundation.cryptoclient-demo-iosUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
