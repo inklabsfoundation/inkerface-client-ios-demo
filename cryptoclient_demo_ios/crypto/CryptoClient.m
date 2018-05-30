@@ -76,9 +76,8 @@ static CryptoClient* manager = nil;
     return addressString;
 }
 
--(NSString *)signTx:(NSString *)privateKey {
-    
-    return nil;
+-(NSString *)signTxWithCCId:(NSString*)ccId Fcn:(NSString*)fcn Args:(NSArray*)args Msg:(NSString*)msg Counter:(NSString*)counter FeeLimit:(NSString*)feeLimit PrivKey:(NSString*)privateKey {
+    return @"need to be implemented";
 }
 
 @end
