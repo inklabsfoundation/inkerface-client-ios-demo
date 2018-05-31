@@ -14,6 +14,9 @@
 +(CryptoClient*)sharedManager;
 -(NSString *)createPrivateKey;
 -(NSString *)createAddress:(NSString*) privateKey;
--(NSString *)signTxWithCCId:(NSString*)ccId Fcn:(NSString*)fcn Args:(NSArray*)args Msg:(NSString*)msg Counter:(NSString*)counter FeeLimit:(NSString*)feeLimit PrivKey:(NSString*)privateKey;
+
+-(NSArray *)createAccount;
+-(NSString *)publicKeyFromPrivate:(NSString*) privateKey;
+-(NSString *)signTxWithCCId:(NSString*)ccId Fcn:(NSString*)fcn Args:(NSArray*)args Msg:(NSString*)msg Counter:(uint64_t)counter FeeLimit:(NSString*)feeLimit PrivKey:(NSString*)privateKey;
 @end
 #endif /* CryptoClient_h */

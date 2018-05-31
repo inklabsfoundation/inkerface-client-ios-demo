@@ -18,10 +18,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     CryptoClient * manager = [CryptoClient sharedManager];
-    NSString* privateKey =[manager createPrivateKey];
-    NSLog(@"%@", privateKey);
-    NSLog(@"%@", [manager createAddress:privateKey]);
-    NSLog(@"%@", [manager signTxWithCCId:@"token" Fcn:@"transfer" Args:[NSArray arrayWithObjects:@"id4b8977c8f3b100c5a047353eac7d06923159477", @"TAB", @"100000000",nil] Msg:@"hello world" Counter:@"0" FeeLimit:@"100000000000" PrivKey:privateKey]);
+    NSArray* account =[manager createAccount];
+    for(id obj in account) {
+        NSLog(@"obj = %@", obj);
+    }
+    NSLog(@"%@", [manager publicKeyFromPrivate:[account lastObject]]);
+    NSLog(@"%@", [manager signTxWithCCId:@"token" Fcn:@"transfer" Args:[NSArray arrayWithObjects:@"i02eecc33111a7a770c6fd295cca99e72ead5e764", @"TAB", @"100000000",nil] Msg:@"hello world" Counter:2847 FeeLimit:@"100000000000" PrivKey:@"23c9f7f355b36ab268ce9580f2388769dcfbdb74622e3db02f31b802f3f88ba4"]);
     // Do any additional setup after loading the view, typically from a nib.
 }
 

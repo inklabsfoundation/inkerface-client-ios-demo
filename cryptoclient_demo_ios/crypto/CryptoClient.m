@@ -9,8 +9,11 @@
 #import "CryptoClient.h"
 #import "sponge.h"
 #import <ASKSecp256k1/CKSecp256k1.h>
+#import <NSHash/NSData+NSHash.h>
+#import "NSData+HexString.h"
+#import "Chaincode.pbobjc.h"
 @implementation CryptoClient
-static int BytesUnit = 32;
+// static int BytesUnit = 32;
 static int BitsUnit  = 64;
 static CryptoClient* manager = nil;
 +(CryptoClient*)sharedManager
@@ -75,8 +78,55 @@ static CryptoClient* manager = nil;
     return addressString;
 }
 
--(NSString *)signTxWithCCId:(NSString*)ccId Fcn:(NSString*)fcn Args:(NSArray*)args Msg:(NSString*)msg Counter:(NSString*)counter FeeLimit:(NSString*)feeLimit PrivKey:(NSString*)privateKey {
-    return @"need to be implemented";
+-(NSArray *)createAccount {
+    NSString *prvkey = [self createPrivateKey];
+    NSString *address = [self createAddress:prvkey];
+    return [NSArray arrayWithObjects:address, prvkey,nil];
+}
+
+-(NSString *)publicKeyFromPrivate:(NSString*) privateKey {
+    NSData *prvData = [NSData hexStringToData:privateKey];
+    NSData *pubkey = [CKSecp256k1 generatePublicKeyWithPrivateKey:prvData compression:NO];
+
+    return [pubkey dataToHexString];
+}
+
+-(NSString *)signTxWithCCId:(NSString*)ccId Fcn:(NSString*)fcn Args: (NSArray *)args Msg:(NSString*)msg Counter:(uint64_t)counter FeeLimit:(NSString*)feeLimit PrivKey:(NSString*)privateKey {
+
+    SignContent *pSignContent = [SignContent new];
+
+    ChaincodeSpec *pInvokeSpec = [[ChaincodeSpec alloc] init];
+    pInvokeSpec.type = ChaincodeSpec_Type_Golang;
+    
+    ChaincodeID *pCcId = [[ChaincodeID alloc] init];
+    pCcId.name = ccId;
+    pInvokeSpec.chaincodeId = pCcId;
+
+    ChaincodeInput *pInput = [[ChaincodeInput alloc] init];
+    NSMutableArray *nsarr = [[NSMutableArray alloc] init];
+    [nsarr addObject:[fcn.length == 0 ? @"invoke":fcn dataUsingEncoding:NSASCIIStringEncoding]];
+    for (NSString * str in args) {
+        [nsarr addObject:[str dataUsingEncoding:NSASCIIStringEncoding]];
+    }
+    pInput.argsArray = nsarr;
+    pInvokeSpec.input = pInput;
+  
+    pSignContent.chaincodeSpec = pInvokeSpec;
+
+    SenderSpec *pSenderSpec = [[SenderSpec alloc] init];
+    pSenderSpec.sender = [[self createAddress:privateKey] dataUsingEncoding:NSASCIIStringEncoding];
+    pSenderSpec.counter = counter;
+    pSenderSpec.inkLimit = [feeLimit dataUsingEncoding:NSASCIIStringEncoding];
+    pSenderSpec.msg = [msg dataUsingEncoding:NSASCIIStringEncoding];
+    pSignContent.senderSpec = pSenderSpec;
+
+    ChaincodeInvocationSpec *pCciSpec = [[ChaincodeInvocationSpec alloc] init];
+    pSignContent.idGenerationAlg = pCciSpec.idGenerationAlg;
+    
+    NSData *msgData = [pSignContent data];
+    
+    NSData *signData = [CKSecp256k1 compactSignData:[msgData SHA256] withPrivateKey:[NSData hexStringToData:privateKey]];
+    return [signData dataToHexString];
 }
 
 @end
