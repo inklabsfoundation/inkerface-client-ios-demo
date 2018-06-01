@@ -8,12 +8,6 @@ DEPENDENCIES:
   - NSHash (~> 1.2.0)
   - Protobuf (~> 3.5.0)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - ASKSecp256k1
-    - NSHash
-    - Protobuf
-
 SPEC CHECKSUMS:
   ASKSecp256k1: e7e03e889c59cb3e7d62819700b3b9ecfc8caf19
   NSHash: 036c03781d372c288d332b512b203e7bb832e46e
@@ -21,4 +15,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: fd60fa335669c1677dbd9a40eba9ea4bf131ca9d
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.3.1
