@@ -19,6 +19,7 @@
     [super viewDidLoad];
     CryptoClient * manager = [CryptoClient sharedManager];
     NSArray* account =[manager createAccount];
+    NSLog(@"prvKeyVerify = %ld", [manager prvKeyVerify:@"23c9f7f355b36ab268ce9580f2388769dcfbdb74622e3db02f31b802f3f88ba4"]);
     for(id obj in account) {
         NSLog(@"obj = %@", obj);
     }
