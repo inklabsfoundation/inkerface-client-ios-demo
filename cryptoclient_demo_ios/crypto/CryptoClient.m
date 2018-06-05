@@ -145,6 +145,35 @@ static CryptoClient* manager = nil;
     return data;
 }
 
+- (PrvkeyValidity)prvKeyVerify:(NSString *)privateKey
+{
+    secp256k1_context *context = secp256k1_context_create(SECP256K1_CONTEXT_VERIFY);
+    NSData *privateKeyData = [NSData hexStringToData:privateKey];
+    // seckey ECDSA Secret key, 32 bytes
+    NSUInteger keyLen = [privateKeyData length];
+    if ( keyLen != 32) {
+        return PrvkeyLengthIllegal;
+    }
+    // check is hex number
+    const char * pBuf =[privateKey UTF8String];
+    for (int i = 0; i < keyLen; ++i) {
+        if (('0' > pBuf[i] || '9' < pBuf[i])
+            && ('A' > pBuf[i] || 'F' < pBuf[i])
+            && ('a' > pBuf[i] || 'f' < pBuf[i]))
+        {
+            return PrvkeyContainsIllegalChars;
+        }
+    }
+    // libsecp256k1 Seckey Verify - returns 1 if valid, 0 if invalid
+    const unsigned char *prvKey = (const unsigned char *)[privateKeyData bytes];
+    int result = secp256k1_ec_seckey_verify(context, prvKey);
+    secp256k1_context_destroy(context);
+    if (result != 1) {
+        return PrvkeyInvalid;
+    }
+    return PrvkeyValid;
+}
+
 @end
 
 
