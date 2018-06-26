@@ -17,6 +17,7 @@
 // static int BytesUnit = 32;
 static int BitsUnit  = 64;
 static CryptoClient* manager = nil;
+static NSString* addressPrefix = @"TX";
 +(CryptoClient*)sharedManager
 {
     if (manager == nil) {
@@ -51,7 +52,7 @@ static CryptoClient* manager = nil;
     if(privateKey == nil) {
         return nil;
     }
-    NSString *addressString = @"i";
+    
     unsigned char *newPublicKey = (unsigned char *)malloc(sizeof(unsigned char)*BitsUnit);
     NSMutableData* dataPrivate = [NSMutableData data];
     for (int idx = 0; idx +2 <= privateKey.length; idx += 2) {
@@ -69,6 +70,7 @@ static CryptoClient* manager = nil;
     }
     int32_t size = BitsUnit;
     int32_t *psize = &size;
+    NSString *addressString = addressPrefix;
     uint8_t *newmessage = (unsigned char *)malloc(sizeof(unsigned char)*200);
     newmessage = sponge(newPublicKey,*psize);
     for (int32_t i = 12; i < 32; i++) {
@@ -104,7 +106,6 @@ static CryptoClient* manager = nil;
     pInvokeSpec.input = pInput;
   
     pSignContent.chaincodeSpec = pInvokeSpec;
-
     SenderSpec *pSenderSpec = [[SenderSpec alloc] init];
     pSenderSpec.sender = [[self createAddress:privateKey] dataUsingEncoding:NSASCIIStringEncoding];
     pSenderSpec.counter = counter;
